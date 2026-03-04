@@ -11,7 +11,7 @@ This generation's story is one word: **AI**.
 
 ## Product Verdict
 
-- 🟢 **Strong Buy**: M5 — SC 4,263 (all-time #1), $1,599. Best value in Apple Silicon history
+- 🟢 **Strong Buy**: M5 — SC 4,263 (all-time #1), $1,699. Now with 1TB standard
 - 🟡 **Buy**: M5 Pro — 18-core CPU + 20-core GPU, 64GB, 307 GB/s. The sweet spot for pros
 - 🟠 **Wait**: M5 Max — 40-core GPU, 128GB, 614 GB/s. Incredible specs, but gen-1 Fusion Architecture
 
@@ -181,34 +181,33 @@ Neural Accelerators:
 ### MacBook Pro Starting Prices
 
 **14-inch**
-- **M5**: $1,599 (₩2,390,000)
-- **M5 Pro**: $2,199 (₩3,290,000 est.)
-- **M5 Max**: $3,599 (₩5,390,000 est.)
+- **M5**: $1,699 (₩2,690,000) — 1TB
+- **M5 Pro**: $2,199 (₩3,490,000) — 1TB
+- **M5 Max**: $3,599 (₩5,790,000) — 2TB
 
 **16-inch**
-- **M5 Pro**: $2,699 (₩3,990,000 est.)
-- **M5 Max**: $3,899 (₩5,790,000 est.)
-- **M5 Max maxed out**: $7,349 (₩10,990,000 est.)
+- **M5 Pro**: $2,699 (₩4,290,000) — 1TB
+- **M5 Max**: $3,899 (₩6,290,000) — 2TB
 
 ### Value (MC Score per $1,000)
 
 ```
 Value:
-████████████████████ M5 11.17 ★
-███████████████████ M5 Pro 10.82
+████████████████████ M5 Pro 10.82 ★
+███████████████████ M5 10.51
 ██████████████ M5 Max 7.95
 ```
 
-> M5 base is **best performance per dollar**.
-> M5 Max carries a **bandwidth premium** — justified for AI workloads.
+> M5 Pro is now **best perf per dollar** — M5 $100 hike flipped it.
+> M5 Max carries a **bandwidth premium**.
 
 ### Price Changes vs M4
 
-- **Base 14"**: $1,599 → $1,599 (unchanged)
+- **Base 14"**: $1,599 → $1,699 (**+$100, +6%** 1TB)
 - **Pro 14"**: $1,999 → $2,199 (**+$200, +10%**)
 - **Max 16"**: $3,499 → $3,899 (**+$400, +11%**)
 
-> The 10–11% hike is Apple's **AI tax** — Fusion Architecture costs + Neural Accelerator premium.
+> All models up. Base=2x storage, Pro/Max=AI tax.
 
 ---
 
@@ -230,9 +229,9 @@ Apple's first dual-die consumer chip. AMD proved chiplets work in servers, but e
 
 M5 base: P+E (2 tiers). M5 Pro/Max: **S+P** (no E cores). Super Core explains the SC edge (~4,400–4,500 vs 4,263). Zero Efficiency cores means every core pulls its weight.
 
-**5. The $200–$400 Price Hike Is Apple's AI Tax**
+**5. Every Model Costs More — $100–$400 AI Tax**
 
-Pro/Max prices jumped 10–11%. This reflects Fusion Architecture manufacturing costs and GPU Neural Accelerator silicon area. Apple is pricing the AI leap as a premium tier.
+Base +$100 (1TB), Pro +$200, Max +$400. Korea premium ~9–11% across the board. Apple priced the AI leap as a premium tier.
 
 ---
 

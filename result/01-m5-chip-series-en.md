@@ -8,7 +8,7 @@
 
 ## Product Verdict
 
-🟢 **Strong Buy**: M5 (Base) — Geekbench SC 4,263 (all-time #1), starting at $1,599. 4x AI boost at the best value. Enough for most users
+🟢 **Strong Buy**: M5 (Base) — Geekbench SC 4,263 (all-time #1), starting at $1,699 (1TB). 4x AI boost at excellent value. Enough for most users
 
 🟡 **Buy**: M5 Pro — Up to 18-core CPU + 20-core GPU, 64GB memory, 307 GB/s. Solid choice for video editing, 3D, and heavy AI workloads
 
@@ -22,7 +22,7 @@
 - M5 Max ships with **40-core GPU + 614 GB/s** memory bandwidth — a game-changer for local LLM inference. Running 70B+ parameter models on-device is now viable
 - All M5 chips feature **GPU Neural Accelerators** delivering **4x AI performance** — dedicated AI accelerators embedded in every GPU core, independent of the Neural Engine
 - Memory bandwidth scales in a clean **1:2:4 ratio** (153/307/614 GB/s) — this is the real tier differentiator, not CPU speed (only ~6% SC variance)
-- MacBook Pro pricing spans **$1,599–$7,349**. M5 Pro 14" starts at $2,199, M5 Max 16" at $3,899
+- MacBook Pro pricing spans **$1,699–$7,349** (all models now start with 1TB/2TB storage). M5 Pro 14" starts at $2,199, M5 Max 16" at $3,899
 
 ---
 
@@ -221,37 +221,37 @@ Fusion Architecture, introduced with M5 Pro/Max, bonds two 3nm dies into a singl
 
 | Model | USA ($) | Korea (₩) | Japan (¥) | KR Premium |
 |-------|---------|----------|---------|-----------|
-| M5 14" (Base) | $1,599 | ₩2,390,000 | ¥248,800 (est.) | +3.1% |
-| M5 Pro 14" | $2,199 | ₩3,290,000 (est.) | ¥339,800 (est.) | ~3% |
-| M5 Pro 16" | $2,699 | ₩3,990,000 (est.) | ¥414,800 (est.) | ~3% |
-| M5 Max 14" | $3,599 | ₩5,390,000 (est.) | ¥549,800 (est.) | ~3% |
-| M5 Max 16" | $3,899 | ₩5,790,000 (est.) | ¥599,800 (est.) | ~3% |
-| M5 Max 16" Maxed | $7,349 | ₩10,990,000 (est.) | ¥1,124,800 (est.) | ~3% |
+| M5 14" (1TB) | $1,699 | ₩2,690,000 | ¥248,800 (est.) | +9.2% |
+| M5 Pro 14" (1TB) | $2,199 | ₩3,490,000 | ¥339,800 (est.) | +9.5% |
+| M5 Pro 16" (1TB) | $2,699 | ₩4,290,000 | ¥414,800 (est.) | +9.6% |
+| M5 Max 14" (2TB) | $3,599 | ₩5,790,000 | ¥549,800 (est.) | +11.0% |
+| M5 Max 16" (2TB) | $3,899 | ₩6,290,000 | ¥599,800 (est.) | +11.3% |
+| M5 Max 16" Maxed | $7,349 | est. | ¥1,124,800 (est.) | — |
 
 > Exchange rates: $1 ≈ ₩1,450 / ¥150 (March 2026).
-> Only M5 base Korean price is confirmed; others estimated at ~3% premium.
+> US/Korea prices confirmed via Apple Newsroom. Japan estimated. Korea premium ~9–11%.
 
 ### 5.2 Value Analysis (Performance per Dollar)
 
 ```
 MC Score per $1,000:
-M5      ████████████████████████████████████████  11.17  ★ Best Value
-M5 Pro  ███████████████████████████████           10.82
-M5 Max  ████████████████████████▎                  7.95
+M5 Pro  ████████████████████████████████████████  10.82  ★ Best Value
+M5      ███████████████████████████████████████▋  10.51
+M5 Max  █████████████████████████████▍             7.95
 ```
 
-> M5 base offers the **highest multi-core performance per dollar**.
+> M5 Pro now offers the **highest multi-core performance per dollar** — M5 base's $100 price bump (1TB upgrade) flipped the value ranking.
 > M5 Max carries a premium for memory bandwidth/capacity — justified for AI workloads.
 
 ### 5.3 Price Changes vs M4 Generation
 
 | Model | M4 Gen Price | M5 Gen Price | Change |
 |-------|-------------|-------------|--------|
-| Base 14" | $1,599 | $1,599 | No change |
+| Base 14" | $1,599 (512GB) | $1,699 (1TB) | +$100 (+6%) |
 | Pro 14" | $1,999 | $2,199 | +$200 (+10%) |
 | Max 16" | $3,499 | $3,899 | +$400 (+11%) |
 
-> Pro/Max prices increased. Likely reflects Fusion Architecture manufacturing costs.
+> All models saw price increases. Base gets 2x storage (512GB→1TB); Pro/Max reflect Fusion Architecture + AI premium.
 
 ---
 
@@ -273,9 +273,9 @@ M5 Pro/Max's dual-die Fusion Architecture is Apple's first multi-die consumer ch
 
 M5 base: Performance + Efficiency (2 tiers). M5 Pro/Max: **Super + Performance** (no Efficiency cores). The Super Core is the basis for Apple's "world's fastest single-threaded core" claim and explains the slight SC advantage (~4,400–4,500 vs 4,263). Notably, M5 Pro/Max have **zero Efficiency cores** — every core is performance-class.
 
-**5. The $200–$400 Price Hike Signals Apple's AI Tax**
+**5. The $100–$400 Price Hike Across the Board — Every Model Costs More**
 
-M5 Pro starts at $2,199 (up from $1,999 for M4 Pro) and M5 Max at $3,899 (up from $3,499). This 10–11% increase likely reflects Fusion Architecture manufacturing costs and the addition of GPU Neural Accelerators. Apple is effectively pricing the AI performance leap as a premium feature — those who need it pay more.
+M5 base goes from $1,599 to $1,699 (+6%, with 1TB now standard). M5 Pro jumps to $2,199 (+10%) and M5 Max to $3,899 (+11%). The base model hike is offset by doubled storage. Pro/Max increases reflect Fusion Architecture manufacturing costs and GPU Neural Accelerators. Korea premium runs ~9–11% across all models — higher than the historical 5–8% range.
 
 ---
 
