@@ -32,9 +32,9 @@ This generation's story is one word: **AI**.
 
 ```
 GPU Cores:
-██████████ M5 10
-████████████████████ M5 Pro 20
-████████████████████████████████████████ M5 Max 40 ★
+█████ M5 10
+██████████ M5 Pro 20
+████████████████████ M5 Max 40 ★
 ```
 
 Every GPU core has a built-in **Neural Accelerator**.
@@ -44,9 +44,9 @@ GPU core count = AI accelerator count.
 
 ```
 Bandwidth (GB/s):
-██████████ M5 153
-████████████████████ M5 Pro 307
-████████████████████████████████████████ M5 Max 614 ★
+█████ M5 153
+██████████ M5 Pro 307
+████████████████████ M5 Max 614 ★
 ```
 
 - **M5**: Up to 32GB
@@ -84,10 +84,10 @@ Similar to AMD chiplets but with Unified Memory — that's the difference.
 
 ```
 Single-Core:
-██████████████████ M4 Pro 3,800
-████████████████████ M5 4,263 ✓
-████████████████████ M5 Pro ~4,400
-█████████████████████ M5 Max ~4,500 ★
+███████████████ M4 Pro 3800
+█████████████████ M5 4263 ✓
+██████████████████ M5 Pro ~4400
+██████████████████ M5 Max ~4500 ★
 ```
 
 > All three M5 chips are within **~6%**. Daily responsiveness is basically identical.
@@ -96,9 +96,9 @@ Single-Core:
 
 ```
 Multi-Core:
-███████████ M5 17,862 ✓
-███████████████ M5 Pro ~23,800
-████████████████████ M5 Max ~31,000 ★
+████████████ M5 17.9K ✓
+███████████████ M5 Pro ~23.8K
+████████████████████ M5 Max ~31K ★
 ```
 
 > M5 Max is **+73%** over M5 base. The 18 vs 10 core count shows.
@@ -108,8 +108,8 @@ Multi-Core:
 ```
 GPU Metal:
 ██████ M5 ~80K
-████████████ M5 Pro ~160K
-████████████████████ M5 Max ~258K ★
+███████████ M5 Pro ~160K
+██████████████████ M5 Max ~258K ★
 ```
 
 > M5 Max: **+34%** over M4 Max (191K).
@@ -147,9 +147,9 @@ Result: GPU-based AI tasks (image gen, LLM inference) are **4x faster**.
 
 ```
 Neural Accelerators:
-██████████ M5 10
-████████████████████ M5 Pro 20
-████████████████████████████████████████ M5 Max 40 ★
+█████ M5 10
+██████████ M5 Pro 20
+████████████████████ M5 Max 40 ★
 ```
 
 > Apple's "4x AI" means **each chip vs its own predecessor**.
@@ -195,7 +195,7 @@ Neural Accelerators:
 ```
 Value:
 ████████████████████ M5 11.17 ★
-████████████████████ M5 Pro 10.82
+███████████████████ M5 Pro 10.82
 ██████████████ M5 Max 7.95
 ```
 
