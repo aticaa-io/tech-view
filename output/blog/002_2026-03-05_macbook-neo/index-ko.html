@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aticaa Tech View — MacBook Neo: ₩99만원짜리 스벅 입장권</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.7; color: #1d1d1f; background: #fff;
+    max-width: 760px; margin: 0 auto; padding: 2rem 1.5rem;
+  }
+  h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; }
+  h2 { font-size: 1.4rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid #e5e5e7; }
+  h3 { font-size: 1.1rem; font-weight: 600; margin: 1.5rem 0 0.6rem; }
+  p { margin-bottom: 1rem; }
+  a { color: #e8590c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  hr { border: none; border-top: 1px solid #e5e5e7; margin: 2rem 0; }
+  ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+  li { margin-bottom: 0.3rem; }
+  strong { font-weight: 600; }
+  blockquote {
+    border-left: 3px solid #e8590c; padding: 0.6rem 1rem;
+    background: #fff8f5; margin: 1rem 0; border-radius: 0 6px 6px 0;
+    font-size: 0.92rem; color: #444;
+  }
+  .meta { color: #86868b; font-size: 0.85rem; margin-bottom: 2rem; }
+  .meta span { display: inline-block; margin-right: 1.5rem; }
+
+  /* Cafe ASCII Art */
+  .cafe-art {
+    text-align: center; font-family: monospace; font-size: 0.95rem;
+    background: #fef9f4; border: 1px dashed #e8c9a0; border-radius: 12px;
+    padding: 1.5rem; margin: 1.5rem 0; color: #8b6914; line-height: 1.4;
+  }
+
+  /* Verdict Cards */
+  .verdict { display: flex; flex-direction: column; gap: 0.7rem; margin: 1.2rem 0; }
+  .verdict-card {
+    display: flex; align-items: flex-start; gap: 0.8rem;
+    padding: 1rem 1.2rem; border-radius: 10px; font-size: 0.95rem;
+  }
+  .verdict-card .emoji { font-size: 1.5rem; flex-shrink: 0; }
+  .verdict-card .label { font-weight: 700; }
+  .verdict-green { background: #e8f5e9; border: 1px solid #c8e6c9; }
+  .verdict-yellow { background: #fff8e1; border: 1px solid #ffecb3; }
+
+  /* Bar Charts */
+  .bar-chart { margin: 1rem 0 1.5rem; }
+  .bar-chart .chart-title { font-weight: 600; font-size: 0.9rem; color: #86868b; margin-bottom: 0.6rem; }
+  .bar-row { display: flex; align-items: center; margin-bottom: 0.5rem; gap: 0.6rem; }
+  .bar-label { width: 80px; font-size: 0.85rem; font-weight: 500; text-align: right; flex-shrink: 0; }
+  .bar-track { flex: 1; background: #f0f0f0; border-radius: 6px; height: 28px; position: relative; overflow: hidden; }
+  .bar-fill {
+    height: 100%; border-radius: 6px;
+    background: linear-gradient(90deg, #e8590c, #ff8a4c);
+    display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;
+    font-size: 0.78rem; font-weight: 600; color: #fff; min-width: 40px;
+  }
+  .bar-fill.blue { background: linear-gradient(90deg, #007aff, #5ac8fa); }
+  .bar-fill.gray { background: linear-gradient(90deg, #8e8e93, #aeaeb2); }
+  .bar-fill.green { background: linear-gradient(90deg, #34c759, #30d158); }
+  .bar-value { width: 90px; font-size: 0.82rem; color: #555; flex-shrink: 0; }
+  .bar-star { color: #ff9500; font-weight: 700; }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.88rem; }
+  th { background: #fef5ee; font-weight: 600; text-align: left; padding: 0.6rem 0.8rem; border-bottom: 2px solid #e8c9a0; }
+  td { padding: 0.5rem 0.8rem; border-bottom: 1px solid #e5e5e7; }
+  tr:hover td { background: #fffaf7; }
+  .star { color: #e8590c; font-weight: 700; }
+
+  /* Pain Level */
+  .pain-section { margin: 1rem 0; }
+  .pain-card {
+    background: #fff; border: 1px solid #e5e5e7; border-radius: 10px;
+    padding: 0.8rem 1rem; margin-bottom: 0.6rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .pain-card.critical { border-left: 4px solid #ff3b30; }
+  .pain-card.moderate { border-left: 4px solid #ff9500; }
+  .pain-card.minor { border-left: 4px solid #8e8e93; }
+  .pain-item { font-weight: 600; min-width: 140px; }
+  .pain-desc { font-size: 0.88rem; color: #555; flex: 1; }
+  .pain-dots { flex-shrink: 0; }
+
+  /* USB Diagram */
+  .usb-diagram {
+    background: #f5f5f7; border: 2px solid #d2d2d7; border-radius: 12px;
+    padding: 1.2rem; margin: 1rem 0; text-align: center; font-family: monospace;
+    font-size: 0.88rem; line-height: 1.5;
+  }
+  .usb-diagram .port { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 6px; margin: 0.3rem; font-weight: 600; }
+  .usb-diagram .usb3 { background: #e3f2fd; color: #1565c0; border: 1px solid #90caf9; }
+  .usb-diagram .usb2 { background: #fff3e0; color: #e65100; border: 1px solid #ffcc80; }
+
+  /* Persona Cards */
+  .persona-section { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+  .persona-card {
+    border-radius: 12px; padding: 1rem 1.2rem;
+  }
+  .persona-card.buy { background: #e8f5e9; border: 1px solid #c8e6c9; }
+  .persona-card.skip { background: #fce4ec; border: 1px solid #f8bbd0; }
+  .persona-card h4 { margin-bottom: 0.6rem; font-size: 1rem; }
+  .persona-card .persona { font-weight: 600; color: #1d1d1f; margin-bottom: 0.2rem; }
+  .persona-card .desc { font-size: 0.85rem; color: #555; }
+
+  /* Coffee Chart */
+  .coffee-chart {
+    background: #fef9f4; border: 1px solid #e8c9a0; border-radius: 12px;
+    padding: 1.2rem; margin: 1rem 0;
+  }
+  .coffee-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; font-size: 0.9rem; }
+  .coffee-label { width: 130px; font-weight: 500; text-align: right; flex-shrink: 0; }
+  .coffee-cups { color: #8b6914; font-size: 0.85rem; }
+  .coffee-price { color: #86868b; font-size: 0.82rem; }
+
+  /* Insight Cards */
+  .insight { background: #fef5ee; border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: 1rem; border-left: 3px solid #e8590c; }
+  .insight .num { font-weight: 700; color: #e8590c; }
+
+  /* Tags */
+  .tags { margin-top: 2rem; }
+  .tags a {
+    display: inline-block; background: #fef5ee; padding: 0.3rem 0.8rem;
+    border-radius: 20px; font-size: 0.82rem; color: #e8590c; margin: 0.2rem 0.3rem 0.2rem 0;
+    border: 1px solid #fdd9b5;
+  }
+
+  /* Footer */
+  .disclaimer { font-size: 0.8rem; color: #86868b; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e5e5e7; }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    body { padding: 1rem; }
+    h1 { font-size: 1.4rem; }
+    .bar-label { width: 60px; font-size: 0.78rem; }
+    .bar-value { width: 75px; font-size: 0.78rem; }
+    .persona-section { grid-template-columns: 1fr; }
+    .pain-card { flex-wrap: wrap; }
+    .pain-item { min-width: auto; }
+  }
+</style>
+</head>
+<body>
+
+<h1>MacBook Neo: ₩99만원짜리 스벅 입장권</h1>
+<div class="meta">
+  <span>📅 2026-03-05</span>
+  <span>📊 Apple 공식, Geekbench 6</span>
+</div>
+
+<div class="cafe-art">
+        ☕<br>
+    ┌─────────┐<br>
+    │ MacBook  │<br>
+    │   Neo    │<br>
+    │  ₩99만   │<br>
+    └─────────┘<br>
+    ═══════════<br>
+     카페 테이블
+</div>
+
+<hr>
+
+<h2>Product Verdict</h2>
+
+<div class="verdict">
+  <div class="verdict-card verdict-yellow">
+    <span class="emoji">🟡</span>
+    <div>
+      <span class="label">Buy (조건부)</span> — MacBook Neo — A18 Pro, $599 (₩990,000). 아이폰 16 Pro 칩이 맥북에 들어갔다. 웹서핑·문서·넷플릭스? 완벽. 코딩이나 영상 편집이 목적이면? 도망가세요
+    </div>
+  </div>
+  <div class="verdict-card verdict-green">
+    <span class="emoji">🟢</span>
+    <div>
+      <span class="label">Strong Buy (비교 대상)</span> — MacBook Air M4 — $1,099 (₩1,690,000). ₩70만원 더 내면 M4 + 16GB RAM + MagSafe + 키보드 백라이트 + Thunderbolt. 이 차이를 아끼면 후회하고, 더 내면 만족한다
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<h2>요약</h2>
+<ul>
+  <li><strong>역사상 가장 싼 MacBook</strong> — $599 (₩990,000). 아메리카노 180잔 가격으로 macOS 생태계 입장</li>
+  <li><strong>아이폰 16 Pro 칩이 맥북에</strong> — A18 Pro. 싱글코어 ~3,400으로 M3를 넘고, 멀티코어 ~8,200은 M1 수준</li>
+  <li><strong>8GB RAM 고정, 업그레이드 불가</strong> — 2026년에 8GB. 탭 30개 열면 숨 막힘. 이 맥북의 진짜 천장</li>
+  <li><strong>빠진 것 12가지</strong> — MagSafe·Thunderbolt·키보드 백라이트·True Tone 등. ₩99만원의 비밀은 "뭘 뺐는가"</li>
+  <li><strong>"세컨북"의 탄생</strong> — 카페에서 가볍게, 출장에서 간단히. 메인 맥북이 아닌 "두 번째 맥북"</li>
+</ul>
+
+<hr>
+
+<h2>1. 스펙 — 아이폰이 맥북이 됐다</h2>
+
+<h3>1.1 핵심 스펙 비교</h3>
+
+<table>
+  <thead>
+    <tr><th>항목</th><th>MacBook Neo</th><th>MacBook Air M4</th><th>차이</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>칩</td><td>A18 Pro (iPhone)</td><td>Apple M4 (Mac)</td><td>다른 세계</td></tr>
+    <tr><td>CPU</td><td>6코어 (2P+4E)</td><td>10코어 (4P+6E)</td><td>Air +67%</td></tr>
+    <tr><td>GPU</td><td>5코어</td><td>10코어</td><td>Air 2배</td></tr>
+    <tr><td>RAM</td><td>8GB (고정)</td><td>16GB (최대 32GB)</td><td>Air 2–4배</td></tr>
+    <tr><td>SSD</td><td>256/512GB</td><td>256GB–2TB</td><td>Air 확장</td></tr>
+    <tr><td>디스플레이</td><td>13" 2408×1506</td><td>13.6" 2560×1664</td><td>Air 더 선명</td></tr>
+    <tr><td>색역</td><td>sRGB (추정)</td><td class="star">★ P3 Wide</td><td>Air 색감 우위</td></tr>
+    <tr><td>MagSafe</td><td>❌</td><td>✅</td><td></td></tr>
+    <tr><td>Thunderbolt</td><td>❌ USB-C만</td><td>✅ TB4</td><td></td></tr>
+    <tr><td>키보드 백라이트</td><td>❌</td><td>✅</td><td></td></tr>
+    <tr><td>Touch ID</td><td>⚠️ 512GB만</td><td>✅ 전 모델</td><td></td></tr>
+    <tr><td>무게</td><td>1.23 kg</td><td>1.24 kg</td><td>거의 동일</td></tr>
+    <tr><td>배터리</td><td>16시간</td><td>18시간</td><td>Air +2시간</td></tr>
+    <tr><td>시작 가격</td><td class="star">★ $599 (₩990,000)</td><td>$1,099 (₩1,690,000)</td><td>Neo 45% 저렴</td></tr>
+  </tbody>
+</table>
+
+<blockquote>겉보기엔 비슷한데 속은 완전히 다르다 — 쌍둥이의 통장 잔고가 다른 느낌.</blockquote>
+
+<h3>1.2 벤치마크 — 그래서 이게 얼마나 빠른 건데?</h3>
+
+<div class="bar-chart">
+  <div class="chart-title">Geekbench 6 싱글코어 (일상 체감 속도)</div>
+  <div class="bar-row">
+    <span class="bar-label">Air M1</span>
+    <div class="bar-track"><div class="bar-fill gray" style="width:63%">2,400</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M3</span>
+    <div class="bar-track"><div class="bar-fill gray" style="width:82%">3,100</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Neo</span>
+    <div class="bar-track"><div class="bar-fill" style="width:89%">3,400 ←</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M4</span>
+    <div class="bar-track"><div class="bar-fill blue" style="width:100%">3,800 ★</div></div>
+  </div>
+</div>
+
+<blockquote>싱글코어: Neo는 M3를 넘고 M4에 근접 (~90%). 앱 하나 실행 속도는 "이게 60만원?"</blockquote>
+
+<div class="bar-chart">
+  <div class="chart-title">Geekbench 6 멀티코어 (동시 작업 능력)</div>
+  <div class="bar-row">
+    <span class="bar-label">Neo</span>
+    <div class="bar-track"><div class="bar-fill" style="width:55%">8,200 ←</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M1</span>
+    <div class="bar-track"><div class="bar-fill gray" style="width:57%">8,600</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M3</span>
+    <div class="bar-track"><div class="bar-fill gray" style="width:81%">12,100</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M4</span>
+    <div class="bar-track"><div class="bar-fill blue" style="width:100%">15,000 ★</div></div>
+  </div>
+</div>
+
+<blockquote>멀티코어: Neo ≈ M1 수준. Air M4 대비 55%. 6코어 vs 10코어 차이가 여기서 드러난다.</blockquote>
+
+<h3>1.3 메모리 — 8GB의 현실</h3>
+
+<div class="bar-chart">
+  <div class="chart-title">RAM 용량</div>
+  <div class="bar-row">
+    <span class="bar-label">Neo</span>
+    <div class="bar-track"><div class="bar-fill" style="width:25%">8 GB</div></div>
+    <span class="bar-value">고정</span>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M4</span>
+    <div class="bar-track"><div class="bar-fill blue" style="width:50%">16 GB</div></div>
+    <span class="bar-value">기본</span>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M4 최대</span>
+    <div class="bar-track"><div class="bar-fill blue" style="width:100%">32 GB ★</div></div>
+    <span class="bar-value">옵션</span>
+  </div>
+</div>
+
+<p><strong>8GB로 할 수 있는 것:</strong></p>
+<ul>
+  <li>✅ Safari 탭 15–20개</li>
+  <li>✅ Pages/Numbers 문서 작업</li>
+  <li>✅ 넷플릭스/유튜브 스트리밍</li>
+  <li>✅ 간단한 사진 편집</li>
+  <li>✅ Apple Intelligence</li>
+</ul>
+
+<p><strong>8GB로 힘든 것:</strong></p>
+<ul>
+  <li>❌ 탭 30개 + Slack + 카카오톡 + 음악 동시에</li>
+  <li>❌ Xcode 앱 개발</li>
+  <li>❌ Final Cut Pro 영상 편집</li>
+  <li>❌ 로컬 AI 모델 (LLM 등)</li>
+  <li>❌ Docker 컨테이너 개발</li>
+</ul>
+
+<blockquote>2026년에 8GB RAM = 스마트폰 수준. "지금 당장"은 괜찮지만 2–3년 후를 생각하면 한숨이 나온다.</blockquote>
+
+<hr>
+
+<h2>2. 빠진 것들 — "₩99만원의 비밀"</h2>
+
+<h3>치명적 (일상에 영향) 🔴</h3>
+<div class="pain-section">
+  <div class="pain-card critical">
+    <span class="pain-item">MagSafe</span>
+    <span class="pain-desc">케이블에 걸려 넘어지면 맥북이 같이 날아감</span>
+    <span class="pain-dots">🔴🔴🔴</span>
+  </div>
+  <div class="pain-card critical">
+    <span class="pain-item">키보드 백라이트</span>
+    <span class="pain-desc">카페 조명이 어두우면 타자를 못 침</span>
+    <span class="pain-dots">🔴🔴🔴</span>
+  </div>
+  <div class="pain-card critical">
+    <span class="pain-item">16GB RAM</span>
+    <span class="pain-desc">탭 30개 열면 메모리 스왑 시작</span>
+    <span class="pain-dots">🔴🔴🔴</span>
+  </div>
+  <div class="pain-card critical">
+    <span class="pain-item">Touch ID (256GB)</span>
+    <span class="pain-desc">₩99만원 모델은 지문 인식 없음</span>
+    <span class="pain-dots">🔴🔴</span>
+  </div>
+</div>
+
+<h3>불편하지만 참을 만한 🟡</h3>
+<div class="pain-section">
+  <div class="pain-card moderate">
+    <span class="pain-item">Thunderbolt</span>
+    <span class="pain-desc">외장 SSD 속도가 USB 3 수준 (10 Gb/s)</span>
+    <span class="pain-dots">🟡🟡</span>
+  </div>
+  <div class="pain-card moderate">
+    <span class="pain-item">P3 Wide Color</span>
+    <span class="pain-desc">사진 편집 시 색감이 덜 풍부함</span>
+    <span class="pain-dots">🟡🟡</span>
+  </div>
+  <div class="pain-card moderate">
+    <span class="pain-item">True Tone</span>
+    <span class="pain-desc">주변 조명에 따른 자동 색온도 조절 없음</span>
+    <span class="pain-dots">🟡</span>
+  </div>
+  <div class="pain-card moderate">
+    <span class="pain-item">Force Touch</span>
+    <span class="pain-desc">트랙패드 누르는 감촉이 단순함</span>
+    <span class="pain-dots">🟡</span>
+  </div>
+</div>
+
+<h3>그리고 이건 좀 웃긴다</h3>
+<div class="usb-diagram">
+  <div style="font-weight:700; margin-bottom:0.6rem;">USB 포트 비대칭</div>
+  <div style="background:#fff; border:2px solid #999; border-radius:8px; padding:0.8rem; display:inline-block;">
+    <span class="port usb3">USB 3 (10 Gb/s)</span>
+    <span style="margin:0 1rem; color:#999;">· · · MacBook Neo · · ·</span>
+    <span class="port usb2">USB 2 (480 Mb/s)</span>
+    <span class="port" style="background:#f0f0f0; border:1px solid #ccc;">🎧</span>
+  </div>
+  <div style="margin-top:0.6rem; font-size:0.85rem; color:#666;">
+    왼쪽 = 2013년 기술 · 오른쪽 = 2001년 기술<br>
+    외장 SSD는 <strong>반드시 왼쪽에!</strong> 오른쪽에 꽂으면 20배 느려진다
+  </div>
+</div>
+
+<hr>
+
+<h2>3. 가격 비교 — 커피로 환산하면</h2>
+
+<h3>3.1 MacBook Neo 가격표</h3>
+
+<table>
+  <thead>
+    <tr><th>모델</th><th>미국 ($)</th><th>한국 (₩)</th><th>한국 프리미엄</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>256GB (Touch ID 없음)</td><td>$599</td><td>₩990,000</td><td>+14.0%</td></tr>
+    <tr><td>512GB (Touch ID 포함)</td><td>$699</td><td>₩1,190,000</td><td>+17.4%</td></tr>
+    <tr><td>256GB 교육용</td><td>$499</td><td>₩850,000</td><td>—</td></tr>
+  </tbody>
+</table>
+
+<blockquote>한국 프리미엄 14–17%. M5 MacBook Pro의 9–11%보다 높다. 저가 제품일수록 한국에서 더 비싸게 파는 패턴.</blockquote>
+
+<h3>3.2 커피 환산 ☕</h3>
+<div class="coffee-chart">
+  <div style="font-weight:600; margin-bottom:0.6rem;">스타벅스 아메리카노 (₩5,500) 기준</div>
+  <div class="coffee-row">
+    <span class="coffee-label">Neo 256GB</span>
+    <span class="coffee-cups">☕ × 180잔</span>
+    <span class="coffee-price">₩990,000</span>
+  </div>
+  <div class="coffee-row">
+    <span class="coffee-label">Neo 512GB</span>
+    <span class="coffee-cups">☕ × 216잔</span>
+    <span class="coffee-price">₩1,190,000</span>
+  </div>
+  <div class="coffee-row">
+    <span class="coffee-label">Air M4</span>
+    <span class="coffee-cups">☕ × 307잔</span>
+    <span class="coffee-price">₩1,690,000</span>
+  </div>
+  <div class="coffee-row">
+    <span class="coffee-label" style="color:#e8590c; font-weight:600;">Neo→Air 차이</span>
+    <span class="coffee-cups" style="color:#e8590c;">☕ × 127잔 = 주 5잔 × 6개월</span>
+    <span class="coffee-price" style="color:#e8590c;">₩700,000</span>
+  </div>
+</div>
+
+<h3>3.3 경쟁 제품 가격 비교</h3>
+
+<div class="bar-chart">
+  <div class="chart-title">가격대 (USD)</div>
+  <div class="bar-row">
+    <span class="bar-label">Chromebook</span>
+    <div class="bar-track"><div class="bar-fill gray" style="width:36%">$300–500</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Neo</span>
+    <div class="bar-track"><div class="bar-fill" style="width:55%">$599 ←</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">iPad+KB</span>
+    <div class="bar-track"><div class="bar-fill gray" style="width:73%">$798</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M4</span>
+    <div class="bar-track"><div class="bar-fill blue" style="width:100%">$1,099 ★</div></div>
+  </div>
+</div>
+
+<h3>3.4 가성비 — 싱글코어 기준</h3>
+
+<div class="bar-chart">
+  <div class="chart-title">가성비 (SC점수 / $1,000)</div>
+  <div class="bar-row">
+    <span class="bar-label">Neo</span>
+    <div class="bar-track"><div class="bar-fill green" style="width:100%">5.68 ★</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M4</span>
+    <div class="bar-track"><div class="bar-fill blue" style="width:61%">3.46</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M4 512</span>
+    <div class="bar-track"><div class="bar-fill blue" style="width:52%">2.93</div></div>
+  </div>
+</div>
+
+<blockquote>순수 싱글코어 가성비에서 Neo 압도적. 멀티코어+RAM까지 고려하면 이야기가 달라진다.</blockquote>
+
+<hr>
+
+<h2>4. 누가 사야 하나 — 진지하게</h2>
+
+<div class="persona-section">
+  <div class="persona-card buy">
+    <h4>👍 사세요</h4>
+    <div class="persona">카페 블로거 / 글 쓰는 사람</div>
+    <div class="desc">글쓰기 앱 + Safari + 음악이면 충분. ₩99만원 맥북을 카페에 올려놓으면, 아무도 이게 Neo인지 Pro인지 모른다.</div>
+    <br>
+    <div class="persona">학생 (교육용 ₩85만원)</div>
+    <div class="desc">레포트 쓰고, 발표자료 만들고, 강의 듣기에 완벽. 역대급 가성비.</div>
+    <br>
+    <div class="persona">세컨북이 필요한 사람</div>
+    <div class="desc">이미 MacBook Pro가 있는데 침대 넷플릭스, 출장 메일용. 1.23kg, 16시간 배터리.</div>
+    <br>
+    <div class="persona">아이 숙제용 / 가족 공용</div>
+    <div class="desc">유튜브 숙제, 인터넷 서핑. iPad보다 키보드 편하고, Chromebook보다 생태계 좋다.</div>
+  </div>
+  <div class="persona-card skip">
+    <h4>🏃 도망가세요</h4>
+    <div class="persona">유일한 노트북으로 쓸 사람</div>
+    <div class="desc">8GB RAM은 2026년 최소 사양. 2–3년 후 답답. ₩70만원 더 내고 Air M4(16GB) 추천.</div>
+    <br>
+    <div class="persona">영상 편집 / 개발자</div>
+    <div class="desc">Final Cut, Xcode, Docker — 전부 8GB로는 버겁다. A18 Pro 5코어 GPU vs M4 10코어 격차 큼.</div>
+    <br>
+    <div class="persona">외장 장비를 많이 쓰는 사람</div>
+    <div class="desc">Thunderbolt 없음 = 고속 외장 SSD 불가. 오른쪽 USB는 USB 2. 모니터 한 대까지만.</div>
+    <br>
+    <div class="persona">"나 맥북 샀어" 자랑이 목적</div>
+    <div class="desc">카페 조명 아래 키보드 백라이트 안 들어오면... 아는 사람은 안다. (대부분은 모르지만.)</div>
+  </div>
+</div>
+
+<hr>
+
+<h2>인사이트</h2>
+
+<div class="insight">
+  <p><span class="num">1.</span> <strong>$599 MacBook = Apple의 "점유율 확보" 전략</strong></p>
+  <p>Chromebook이 교육 시장을 장악하는 동안 Apple은 $999+ Air만 고집했다. Neo는 "이제 우리도 $600대가 있어요"라는 선언. 마진보다 생태계 잠금(lock-in)이 목적.</p>
+</div>
+
+<div class="insight">
+  <p><span class="num">2.</span> <strong>A18 Pro는 "재활용 칩" — 신칩 개발 없이 $599 실현</strong></p>
+  <p>iPhone 16 Pro에서 이미 양산된 칩을 노트북에. R&D 비용 거의 제로. $599의 비결은 "새 칩 안 만들기". 영리하다.</p>
+</div>
+
+<div class="insight">
+  <p><span class="num">3.</span> <strong>"빠진 것 12가지"가 아니라 "남긴 것"이 핵심</strong></p>
+  <p>macOS + A18 Pro + 16시간 배터리 + 1.23kg. 이 네 가지만으로 Chromebook과 Windows 저가 노트북을 압도. Apple이 "최소한의 맥북 경험"을 정의했다.</p>
+</div>
+
+<div class="insight">
+  <p><span class="num">4.</span> <strong>한국 프리미엄 14–17% — 저가 제품일수록 더 비싸다</strong></p>
+  <p>$599 × ₩1,450 = ₩868,550인데 실제 ₩990,000 (+14%). M5 Pro/Max는 9–11%. 저가 제품일수록 한국에서 더 높은 마진.</p>
+</div>
+
+<div class="insight">
+  <p><span class="num">5.</span> <strong>진짜 경쟁자는 Air가 아니라 iPad다</strong></p>
+  <p>₩99만원 Neo vs ₩116만원 (iPad Air + Magic Keyboard). 비슷한 가격에서 "키보드 macOS" vs "터치 iPadOS" 선택. Apple이 자기 제품끼리 이 가격대에서 경쟁시키는 건 처음.</p>
+</div>
+
+<hr>
+
+<h2>용어집</h2>
+
+<table>
+  <thead>
+    <tr><th>용어</th><th>설명</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>A18 Pro</strong></td><td>iPhone 16 Pro용 칩. 3nm, 6코어 CPU + 5코어 GPU. Mac 최초 A 시리즈 탑재</td></tr>
+    <tr><td><strong>M4</strong></td><td>Mac 전용 칩. 10코어 CPU + 10코어 GPU + 16GB+. A18 Pro보다 코어 수·메모리 우위</td></tr>
+    <tr><td><strong>sRGB vs P3</strong></td><td>디스플레이 색 범위. P3는 sRGB보다 25% 넓음. Neo는 sRGB(추정), Air는 P3</td></tr>
+    <tr><td><strong>MagSafe</strong></td><td>자석 충전 커넥터. 케이블 걸려도 맥북 안전. Neo는 USB-C 충전만</td></tr>
+    <tr><td><strong>Thunderbolt</strong></td><td>고속 연결 규격 (40 Gb/s). USB-C와 겉모양 같지만 속도 4배. Neo에는 없음</td></tr>
+    <tr><td><strong>Force Touch</strong></td><td>Apple의 감압식 트랙패드. 누르는 세기 감지. Neo는 일반 Multi-Touch 사용</td></tr>
+    <tr><td><strong>True Tone</strong></td><td>주변 조명에 맞춰 디스플레이 색감 자동 조절. 눈 피로 감소. Neo 미탑재</td></tr>
+    <tr><td><strong>Liquid Retina</strong></td><td>Apple의 고해상도 IPS LCD 브랜드명. OLED 아닌 LCD 기반</td></tr>
+    <tr><td><strong>팬리스</strong></td><td>냉각 팬 없는 설계. 완전 무음이지만 고부하 시 성능 저하 가능</td></tr>
+    <tr><td><strong>Apple Intelligence</strong></td><td>온디바이스 AI 기능. 글쓰기 도구, Siri 강화 등. 8GB에서도 동작</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Reality Check</h2>
+
+<blockquote>📊 MacBook Neo 발표 다음 날(2026-03-05) 작성. 벤치마크는 iPhone 16 Pro A18 Pro 기반 추정.</blockquote>
+
+<h3>확인 ✅</h3>
+<table>
+  <thead><tr><th>항목</th><th>출처</th><th>판정</th></tr></thead>
+  <tbody>
+    <tr><td>A18 Pro 탑재</td><td>Apple 공식</td><td>✅</td></tr>
+    <tr><td>$599 / ₩990,000</td><td>Apple 공식</td><td>✅</td></tr>
+    <tr><td>8GB RAM 고정</td><td>Apple 공식</td><td>✅</td></tr>
+    <tr><td>4색 (Blush/Indigo/Silver/Citrus)</td><td>Apple 공식</td><td>✅</td></tr>
+    <tr><td>팬리스, 16시간, MagSafe 없음</td><td>Apple 공식</td><td>✅</td></tr>
+    <tr><td>256GB Touch ID 없음</td><td>Apple 공식</td><td>✅</td></tr>
+  </tbody>
+</table>
+
+<h3>검증 대기 ⏳</h3>
+<table>
+  <thead><tr><th>항목</th><th>현재 추정</th><th>검증 시점</th><th>판정</th></tr></thead>
+  <tbody>
+    <tr><td>Geekbench SC</td><td>~3,400</td><td>출시 후 1주</td><td>⏳</td></tr>
+    <tr><td>Geekbench MC</td><td>~8,200</td><td>출시 후 1주</td><td>⏳</td></tr>
+    <tr><td>실제 배터리</td><td>16시간</td><td>출시 후 2주</td><td>⏳</td></tr>
+    <tr><td>팬리스 쓰로틀링</td><td>미확인</td><td>출시 후 2주</td><td>⏳</td></tr>
+    <tr><td>8GB 실사용 한계</td><td>탭 15–20개</td><td>출시 후 1개월</td><td>⏳</td></tr>
+  </tbody>
+</table>
+
+<h3>업데이트 로드맵</h3>
+<ul>
+  <li>📅 3월 11일: 출시일 실측 Geekbench</li>
+  <li>📅 3월 말: 배터리/발열 리뷰 종합</li>
+  <li>📅 6월: Product Verdict 재평가</li>
+</ul>
+
+<hr>
+
+<h2>레퍼런스</h2>
+<ul>
+  <li><a href="https://www.apple.com/newsroom/2026/03/say-hello-to-macbook-neo/">Apple Newsroom — MacBook Neo 발표</a></li>
+  <li><a href="https://www.apple.com/kr/newsroom/2026/03/say-hello-to-macbook-neo/">Apple KR Newsroom — MacBook Neo 한국</a></li>
+  <li><a href="https://browser.geekbench.com/v6/cpu/search?q=iPhone+16+Pro">Geekbench 6 — A18 Pro (iPhone 16 Pro)</a></li>
+  <li><a href="https://www.macrumors.com/2026/03/04/apple-announces-low-cost-macbook-neo-with-a18-pro-chip/">MacRumors — MacBook Neo 분석</a></li>
+</ul>
+
+<div class="disclaimer">
+  <p>환율: $1 ≈ ₩1,450 / ¥150 (2026년 3월) · 이 리포트는 구매 조언이 아닙니다. 출시 후 실측 리뷰를 확인하세요.</p>
+</div>
+
+<div class="tags">
+  <a href="#">#MacBookNeo</a>
+  <a href="#">#Apple</a>
+  <a href="#">#A18Pro</a>
+  <a href="#">#세컨북</a>
+  <a href="#">#스벅입장권</a>
+  <a href="#">#가성비맥북</a>
+  <a href="#">#AticaaTechView</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aticaa Tech View — MacBook Neo: Your $599 Ticket to the MacBook Club</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.7; color: #1d1d1f; background: #fff;
+    max-width: 760px; margin: 0 auto; padding: 2rem 1.5rem;
+  }
+  h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; }
+  h2 { font-size: 1.4rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid #e5e5e7; }
+  h3 { font-size: 1.1rem; font-weight: 600; margin: 1.5rem 0 0.6rem; }
+  p { margin-bottom: 1rem; }
+  a { color: #e8590c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  hr { border: none; border-top: 1px solid #e5e5e7; margin: 2rem 0; }
+  ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+  li { margin-bottom: 0.3rem; }
+  strong { font-weight: 600; }
+  blockquote {
+    border-left: 3px solid #e8590c; padding: 0.6rem 1rem;
+    background: #fff8f5; margin: 1rem 0; border-radius: 0 6px 6px 0;
+    font-size: 0.92rem; color: #444;
+  }
+  .meta { color: #86868b; font-size: 0.85rem; margin-bottom: 2rem; }
+  .meta span { display: inline-block; margin-right: 1.5rem; }
+
+  .cafe-art {
+    text-align: center; font-family: monospace; font-size: 0.95rem;
+    background: #fef9f4; border: 1px dashed #e8c9a0; border-radius: 12px;
+    padding: 1.5rem; margin: 1.5rem 0; color: #8b6914; line-height: 1.4;
+  }
+
+  .verdict { display: flex; flex-direction: column; gap: 0.7rem; margin: 1.2rem 0; }
+  .verdict-card {
+    display: flex; align-items: flex-start; gap: 0.8rem;
+    padding: 1rem 1.2rem; border-radius: 10px; font-size: 0.95rem;
+  }
+  .verdict-card .emoji { font-size: 1.5rem; flex-shrink: 0; }
+  .verdict-card .label { font-weight: 700; }
+  .verdict-green { background: #e8f5e9; border: 1px solid #c8e6c9; }
+  .verdict-yellow { background: #fff8e1; border: 1px solid #ffecb3; }
+
+  .bar-chart { margin: 1rem 0 1.5rem; }
+  .bar-chart .chart-title { font-weight: 600; font-size: 0.9rem; color: #86868b; margin-bottom: 0.6rem; }
+  .bar-row { display: flex; align-items: center; margin-bottom: 0.5rem; gap: 0.6rem; }
+  .bar-label { width: 80px; font-size: 0.85rem; font-weight: 500; text-align: right; flex-shrink: 0; }
+  .bar-track { flex: 1; background: #f0f0f0; border-radius: 6px; height: 28px; position: relative; overflow: hidden; }
+  .bar-fill {
+    height: 100%; border-radius: 6px;
+    background: linear-gradient(90deg, #e8590c, #ff8a4c);
+    display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;
+    font-size: 0.78rem; font-weight: 600; color: #fff; min-width: 40px;
+  }
+  .bar-fill.blue { background: linear-gradient(90deg, #007aff, #5ac8fa); }
+  .bar-fill.gray { background: linear-gradient(90deg, #8e8e93, #aeaeb2); }
+  .bar-fill.green { background: linear-gradient(90deg, #34c759, #30d158); }
+  .bar-value { width: 90px; font-size: 0.82rem; color: #555; flex-shrink: 0; }
+
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.88rem; }
+  th { background: #fef5ee; font-weight: 600; text-align: left; padding: 0.6rem 0.8rem; border-bottom: 2px solid #e8c9a0; }
+  td { padding: 0.5rem 0.8rem; border-bottom: 1px solid #e5e5e7; }
+  tr:hover td { background: #fffaf7; }
+  .star { color: #e8590c; font-weight: 700; }
+
+  .pain-section { margin: 1rem 0; }
+  .pain-card {
+    background: #fff; border: 1px solid #e5e5e7; border-radius: 10px;
+    padding: 0.8rem 1rem; margin-bottom: 0.6rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .pain-card.critical { border-left: 4px solid #ff3b30; }
+  .pain-card.moderate { border-left: 4px solid #ff9500; }
+  .pain-item { font-weight: 600; min-width: 140px; }
+  .pain-desc { font-size: 0.88rem; color: #555; flex: 1; }
+  .pain-dots { flex-shrink: 0; }
+
+  .usb-diagram {
+    background: #f5f5f7; border: 2px solid #d2d2d7; border-radius: 12px;
+    padding: 1.2rem; margin: 1rem 0; text-align: center; font-family: monospace;
+    font-size: 0.88rem; line-height: 1.5;
+  }
+  .usb-diagram .port { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 6px; margin: 0.3rem; font-weight: 600; }
+  .usb-diagram .usb3 { background: #e3f2fd; color: #1565c0; border: 1px solid #90caf9; }
+  .usb-diagram .usb2 { background: #fff3e0; color: #e65100; border: 1px solid #ffcc80; }
+
+  .persona-section { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+  .persona-card { border-radius: 12px; padding: 1rem 1.2rem; }
+  .persona-card.buy { background: #e8f5e9; border: 1px solid #c8e6c9; }
+  .persona-card.skip { background: #fce4ec; border: 1px solid #f8bbd0; }
+  .persona-card h4 { margin-bottom: 0.6rem; font-size: 1rem; }
+  .persona-card .persona { font-weight: 600; color: #1d1d1f; margin-bottom: 0.2rem; }
+  .persona-card .desc { font-size: 0.85rem; color: #555; }
+
+  .coffee-chart {
+    background: #fef9f4; border: 1px solid #e8c9a0; border-radius: 12px;
+    padding: 1.2rem; margin: 1rem 0;
+  }
+  .coffee-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; font-size: 0.9rem; }
+  .coffee-label { width: 130px; font-weight: 500; text-align: right; flex-shrink: 0; }
+  .coffee-cups { color: #8b6914; font-size: 0.85rem; }
+  .coffee-price { color: #86868b; font-size: 0.82rem; }
+
+  .insight { background: #fef5ee; border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: 1rem; border-left: 3px solid #e8590c; }
+  .insight .num { font-weight: 700; color: #e8590c; }
+
+  .tags { margin-top: 2rem; }
+  .tags a {
+    display: inline-block; background: #fef5ee; padding: 0.3rem 0.8rem;
+    border-radius: 20px; font-size: 0.82rem; color: #e8590c; margin: 0.2rem 0.3rem 0.2rem 0;
+    border: 1px solid #fdd9b5;
+  }
+
+  .disclaimer { font-size: 0.8rem; color: #86868b; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e5e5e7; }
+
+  @media (max-width: 600px) {
+    body { padding: 1rem; }
+    h1 { font-size: 1.4rem; }
+    .bar-label { width: 60px; font-size: 0.78rem; }
+    .bar-value { width: 75px; font-size: 0.78rem; }
+    .persona-section { grid-template-columns: 1fr; }
+    .pain-card { flex-wrap: wrap; }
+    .pain-item { min-width: auto; }
+  }
+</style>
+</head>
+<body>
+
+<h1>MacBook Neo: Your $599 Ticket to the MacBook Club</h1>
+<div class="meta">
+  <span>📅 2026-03-05</span>
+  <span>📊 Apple Official, Geekbench 6</span>
+</div>
+
+<div class="cafe-art">
+        ☕<br>
+    ┌─────────┐<br>
+    │ MacBook  │<br>
+    │   Neo    │<br>
+    │   $599   │<br>
+    └─────────┘<br>
+    ═══════════<br>
+     cafe table
+</div>
+
+<hr>
+
+<h2>Product Verdict</h2>
+
+<div class="verdict">
+  <div class="verdict-card verdict-yellow">
+    <span class="emoji">🟡</span>
+    <div>
+      <span class="label">Buy (conditional)</span> — MacBook Neo — A18 Pro, $599 (₩990,000). The iPhone 16 Pro chip in a laptop. Web, docs, Netflix? Perfect. Coding or video editing? Keep walking
+    </div>
+  </div>
+  <div class="verdict-card verdict-green">
+    <span class="emoji">🟢</span>
+    <div>
+      <span class="label">Strong Buy (the comparison)</span> — MacBook Air M4 — $1,099 (₩1,690,000). For $500 more you get M4 + 16GB RAM + MagSafe + backlit keyboard + Thunderbolt. Save $500 and regret it, or spend $500 and forget about it
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li><strong>Cheapest MacBook ever</strong> — $599 (₩990,000). The price of 109 Starbucks lattes gets you into the macOS ecosystem</li>
+  <li><strong>iPhone 16 Pro chip in a laptop</strong> — A18 Pro. Single-core ~3,400 beats M3 Air, multi-core ~8,200 matches M1</li>
+  <li><strong>8GB RAM, non-upgradeable</strong> — In 2026. Open 30 tabs and watch it struggle. This is the real ceiling</li>
+  <li><strong>12 features removed</strong> — No MagSafe, Thunderbolt, backlit keyboard, True Tone... The $599 secret is what they took away</li>
+  <li><strong>The "second laptop" is born</strong> — Light for cafes, simple for travel. Not your main MacBook — your second one</li>
+</ul>
+
+<hr>
+
+<h2>1. Specs — An iPhone Became a MacBook</h2>
+
+<h3>1.1 Core Specs</h3>
+
+<table>
+  <thead>
+    <tr><th>Spec</th><th>MacBook Neo</th><th>MacBook Air M4</th><th>Difference</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Chip</td><td>A18 Pro (iPhone)</td><td>Apple M4 (Mac)</td><td>Different class</td></tr>
+    <tr><td>CPU</td><td>6-core (2P+4E)</td><td>10-core (4P+6E)</td><td>Air +67%</td></tr>
+    <tr><td>GPU</td><td>5-core</td><td>10-core</td><td>Air 2x</td></tr>
+    <tr><td>RAM</td><td>8GB (fixed)</td><td>16GB (up to 32GB)</td><td>Air 2–4x</td></tr>
+    <tr><td>SSD</td><td>256/512GB</td><td>256GB–2TB</td><td>Air expandable</td></tr>
+    <tr><td>Display</td><td>13" 2408×1506</td><td>13.6" 2560×1664</td><td>Air sharper</td></tr>
+    <tr><td>Color Gamut</td><td>sRGB (est.)</td><td class="star">★ P3 Wide</td><td>Air richer</td></tr>
+    <tr><td>MagSafe</td><td>❌</td><td>✅</td><td></td></tr>
+    <tr><td>Thunderbolt</td><td>❌ USB-C only</td><td>✅ TB4</td><td></td></tr>
+    <tr><td>Backlit KB</td><td>❌</td><td>✅</td><td></td></tr>
+    <tr><td>Touch ID</td><td>⚠️ 512GB only</td><td>✅ All models</td><td></td></tr>
+    <tr><td>Weight</td><td>1.23 kg (2.7 lb)</td><td>1.24 kg (2.73 lb)</td><td>Nearly same</td></tr>
+    <tr><td>Battery</td><td>16 hours</td><td>18 hours</td><td>Air +2 hrs</td></tr>
+    <tr><td>Price</td><td class="star">★ $599 (₩990,000)</td><td>$1,099 (₩1,690,000)</td><td>Neo 45% cheaper</td></tr>
+  </tbody>
+</table>
+
+<blockquote>Same aluminum shell. Completely different insides. Twins with very different bank accounts.</blockquote>
+
+<h3>1.2 Benchmarks</h3>
+
+<div class="bar-chart">
+  <div class="chart-title">Geekbench 6 Single-Core (daily speed)</div>
+  <div class="bar-row">
+    <span class="bar-label">Air M1</span>
+    <div class="bar-track"><div class="bar-fill gray" style="width:63%">2,400</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M3</span>
+    <div class="bar-track"><div class="bar-fill gray" style="width:82%">3,100</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Neo</span>
+    <div class="bar-track"><div class="bar-fill" style="width:89%">3,400 ←</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M4</span>
+    <div class="bar-track"><div class="bar-fill blue" style="width:100%">3,800 ★</div></div>
+  </div>
+</div>
+
+<blockquote>Single-core: Neo beats M3, approaches M4 (~90%). One app at a time? "This is $599?"</blockquote>
+
+<div class="bar-chart">
+  <div class="chart-title">Geekbench 6 Multi-Core (multitasking)</div>
+  <div class="bar-row">
+    <span class="bar-label">Neo</span>
+    <div class="bar-track"><div class="bar-fill" style="width:55%">8,200 ←</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M1</span>
+    <div class="bar-track"><div class="bar-fill gray" style="width:57%">8,600</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M3</span>
+    <div class="bar-track"><div class="bar-fill gray" style="width:81%">12,100</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M4</span>
+    <div class="bar-track"><div class="bar-fill blue" style="width:100%">15,000 ★</div></div>
+  </div>
+</div>
+
+<blockquote>Multi-core: Neo ≈ M1 level. 55% of Air M4. The 6-core vs 10-core gap is real.</blockquote>
+
+<h3>1.3 Memory — The 8GB Reality</h3>
+
+<div class="bar-chart">
+  <div class="chart-title">RAM</div>
+  <div class="bar-row">
+    <span class="bar-label">Neo</span>
+    <div class="bar-track"><div class="bar-fill" style="width:25%">8 GB</div></div>
+    <span class="bar-value">fixed</span>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M4</span>
+    <div class="bar-track"><div class="bar-fill blue" style="width:50%">16 GB</div></div>
+    <span class="bar-value">base</span>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M4 max</span>
+    <div class="bar-track"><div class="bar-fill blue" style="width:100%">32 GB ★</div></div>
+    <span class="bar-value">option</span>
+  </div>
+</div>
+
+<p><strong>8GB can handle:</strong> Safari 15–20 tabs, docs, Netflix, basic photo editing, Apple Intelligence</p>
+<p><strong>8GB will struggle:</strong> 30+ tabs + Slack + music, Xcode, Final Cut, local AI models, Docker</p>
+
+<blockquote>8GB in 2026 = smartphone-tier memory. Fine now, cramped in 2–3 years.</blockquote>
+
+<hr>
+
+<h2>2. What's Missing — The $599 Secret</h2>
+
+<h3>Critical 🔴</h3>
+<div class="pain-section">
+  <div class="pain-card critical">
+    <span class="pain-item">MagSafe</span>
+    <span class="pain-desc">Trip over the cable, MacBook goes flying</span>
+    <span class="pain-dots">🔴🔴🔴</span>
+  </div>
+  <div class="pain-card critical">
+    <span class="pain-item">Backlit keyboard</span>
+    <span class="pain-desc">Can't type in dim cafes or dark rooms</span>
+    <span class="pain-dots">🔴🔴🔴</span>
+  </div>
+  <div class="pain-card critical">
+    <span class="pain-item">16GB RAM</span>
+    <span class="pain-desc">Memory swap kicks in with moderate multitasking</span>
+    <span class="pain-dots">🔴🔴🔴</span>
+  </div>
+  <div class="pain-card critical">
+    <span class="pain-item">Touch ID (256GB)</span>
+    <span class="pain-desc">$599 model has no fingerprint reader</span>
+    <span class="pain-dots">🔴🔴</span>
+  </div>
+</div>
+
+<h3>Inconvenient but livable 🟡</h3>
+<div class="pain-section">
+  <div class="pain-card moderate">
+    <span class="pain-item">Thunderbolt</span>
+    <span class="pain-desc">External SSD maxes at USB 3 (10 Gb/s)</span>
+    <span class="pain-dots">🟡🟡</span>
+  </div>
+  <div class="pain-card moderate">
+    <span class="pain-item">P3 Wide Color</span>
+    <span class="pain-desc">Photos look less vibrant when editing</span>
+    <span class="pain-dots">🟡🟡</span>
+  </div>
+  <div class="pain-card moderate">
+    <span class="pain-item">True Tone</span>
+    <span class="pain-desc">No auto color temperature adjustment</span>
+    <span class="pain-dots">🟡</span>
+  </div>
+  <div class="pain-card moderate">
+    <span class="pain-item">Force Touch</span>
+    <span class="pain-desc">Simpler trackpad click feedback</span>
+    <span class="pain-dots">🟡</span>
+  </div>
+</div>
+
+<h3>And this is just funny</h3>
+<div class="usb-diagram">
+  <div style="font-weight:700; margin-bottom:0.6rem;">Asymmetric USB Ports</div>
+  <div style="background:#fff; border:2px solid #999; border-radius:8px; padding:0.8rem; display:inline-block;">
+    <span class="port usb3">USB 3 (10 Gb/s)</span>
+    <span style="margin:0 1rem; color:#999;">· · · MacBook Neo · · ·</span>
+    <span class="port usb2">USB 2 (480 Mb/s)</span>
+    <span class="port" style="background:#f0f0f0; border:1px solid #ccc;">🎧</span>
+  </div>
+  <div style="margin-top:0.6rem; font-size:0.85rem; color:#666;">
+    Left = 2013 tech · Right = 2001 tech<br>
+    External drives go on the <strong>LEFT only!</strong> Right side is 20x slower
+  </div>
+</div>
+
+<hr>
+
+<h2>3. Pricing — In Coffee Terms</h2>
+
+<h3>3.1 MacBook Neo Pricing</h3>
+
+<table>
+  <thead>
+    <tr><th>Model</th><th>US ($)</th><th>Korea (₩)</th><th>Korea Premium</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>256GB (no Touch ID)</td><td>$599</td><td>₩990,000</td><td>+14.0%</td></tr>
+    <tr><td>512GB (with Touch ID)</td><td>$699</td><td>₩1,190,000</td><td>+17.4%</td></tr>
+    <tr><td>256GB Education</td><td>$499</td><td>₩850,000</td><td>—</td></tr>
+  </tbody>
+</table>
+
+<blockquote>Korea premium 14–17%, higher than M5 MacBook Pro's 9–11%. Apple charges more markup on cheaper products.</blockquote>
+
+<h3>3.2 In Starbucks Terms ☕</h3>
+<div class="coffee-chart">
+  <div style="font-weight:600; margin-bottom:0.6rem;">Starbucks Latte (~$5.50) equivalent</div>
+  <div class="coffee-row">
+    <span class="coffee-label">Neo 256GB</span>
+    <span class="coffee-cups">☕ × 109 lattes</span>
+    <span class="coffee-price">$599</span>
+  </div>
+  <div class="coffee-row">
+    <span class="coffee-label">Neo 512GB</span>
+    <span class="coffee-cups">☕ × 127 lattes</span>
+    <span class="coffee-price">$699</span>
+  </div>
+  <div class="coffee-row">
+    <span class="coffee-label">Air M4</span>
+    <span class="coffee-cups">☕ × 200 lattes</span>
+    <span class="coffee-price">$1,099</span>
+  </div>
+  <div class="coffee-row">
+    <span class="coffee-label" style="color:#e8590c; font-weight:600;">Neo→Air gap</span>
+    <span class="coffee-cups" style="color:#e8590c;">☕ × 91 lattes = ~18 weeks of daily coffee</span>
+    <span class="coffee-price" style="color:#e8590c;">$500</span>
+  </div>
+</div>
+
+<h3>3.3 Competitive Landscape</h3>
+
+<div class="bar-chart">
+  <div class="chart-title">Price Range (USD)</div>
+  <div class="bar-row">
+    <span class="bar-label">Chromebook</span>
+    <div class="bar-track"><div class="bar-fill gray" style="width:36%">$300–500</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Neo</span>
+    <div class="bar-track"><div class="bar-fill" style="width:55%">$599 ←</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">iPad+KB</span>
+    <div class="bar-track"><div class="bar-fill gray" style="width:73%">$798</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M4</span>
+    <div class="bar-track"><div class="bar-fill blue" style="width:100%">$1,099 ★</div></div>
+  </div>
+</div>
+
+<h3>3.4 Value — Single-Core Per Dollar</h3>
+
+<div class="bar-chart">
+  <div class="chart-title">Value (SC score / $1,000)</div>
+  <div class="bar-row">
+    <span class="bar-label">Neo</span>
+    <div class="bar-track"><div class="bar-fill green" style="width:100%">5.68 ★</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M4</span>
+    <div class="bar-track"><div class="bar-fill blue" style="width:61%">3.46</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Air M4 512</span>
+    <div class="bar-track"><div class="bar-fill blue" style="width:52%">2.93</div></div>
+  </div>
+</div>
+
+<blockquote>On pure single-core per dollar, Neo dominates. Factor in multi-core and RAM, and the story shifts.</blockquote>
+
+<hr>
+
+<h2>4. Who Should Buy This — Seriously</h2>
+
+<div class="persona-section">
+  <div class="persona-card buy">
+    <h4>👍 Buy It</h4>
+    <div class="persona">Cafe writers / bloggers</div>
+    <div class="desc">Writing app + Safari + music is all you need. Nobody can tell it's a Neo from the outside.</div>
+    <br>
+    <div class="persona">Students ($499 education)</div>
+    <div class="desc">Papers, presentations, lectures. Best student deal Apple has ever offered. Period.</div>
+    <br>
+    <div class="persona">Second-laptop people</div>
+    <div class="desc">Already own a Pro? Need a bed Netflix machine or travel email companion. 1.23 kg, 16 hrs.</div>
+    <br>
+    <div class="persona">Kids' homework / family shared</div>
+    <div class="desc">Better keyboard than iPad, better ecosystem than Chromebook.</div>
+  </div>
+  <div class="persona-card skip">
+    <h4>🏃 Skip It</h4>
+    <div class="persona">Only-laptop buyers</div>
+    <div class="desc">8GB = cramped in 2–3 years. Spend $500 more on Air M4 (16GB). Better long-term investment.</div>
+    <br>
+    <div class="persona">Video editors / developers</div>
+    <div class="desc">Final Cut, Xcode, Docker all strain 8GB. A18 Pro's 5-core GPU vs M4's 10-core is a real gap.</div>
+    <br>
+    <div class="persona">External gear users</div>
+    <div class="desc">No Thunderbolt = no fast external SSD. Right USB port is USB 2. Single display only.</div>
+    <br>
+    <div class="persona">The flexer</div>
+    <div class="desc">In a dim cafe, no keyboard backlight = the giveaway. (Most people won't notice though.)</div>
+  </div>
+</div>
+
+<hr>
+
+<h2>Insight</h2>
+
+<div class="insight">
+  <p><span class="num">1.</span> <strong>$599 MacBook = Apple's market share play</strong></p>
+  <p>Chromebooks owned education while Apple insisted on $999+ Air. Neo says "we have a $600 laptop too." Ecosystem lock-in over margins.</p>
+</div>
+
+<div class="insight">
+  <p><span class="num">2.</span> <strong>A18 Pro is a recycled chip — that's how $599 works</strong></p>
+  <p>Already mass-produced for iPhone 16 Pro. No new silicon design. Near-zero incremental R&D. Apple's $599 secret: "don't design a new chip."</p>
+</div>
+
+<div class="insight">
+  <p><span class="num">3.</span> <strong>It's not what's missing — it's what remains</strong></p>
+  <p>macOS + A18 Pro + 16-hour battery + 1.23 kg. These four alone crush Chromebooks and budget Windows laptops. Apple defined the "minimum viable MacBook."</p>
+</div>
+
+<div class="insight">
+  <p><span class="num">4.</span> <strong>Korea premium 14–17% — cheaper products get higher markups</strong></p>
+  <p>$599 × ₩1,450 = ₩868,550 but actual ₩990,000 (+14%). M5 Pro/Max is 9%. Lower-priced products carry proportionally higher Korea premiums.</p>
+</div>
+
+<div class="insight">
+  <p><span class="num">5.</span> <strong>The real competitor isn't MacBook Air — it's iPad</strong></p>
+  <p>$599 Neo vs $798 iPad Air + Magic Keyboard. "Keyboard-first macOS" vs "touchscreen iPadOS." Apple competing with itself at this price tier is new.</p>
+</div>
+
+<hr>
+
+<h2>Glossary</h2>
+
+<table>
+  <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+  <tbody>
+    <tr><td><strong>A18 Pro</strong></td><td>Apple's iPhone 16 Pro chip. 3nm, 6-core CPU + 5-core GPU. First A-series chip in a Mac</td></tr>
+    <tr><td><strong>M4</strong></td><td>Mac-dedicated chip. 10-core CPU + 10-core GPU + 16GB+. Superior to A18 Pro in cores and memory</td></tr>
+    <tr><td><strong>sRGB vs P3</strong></td><td>Display color gamut. P3 covers 25% more colors. Neo is estimated sRGB, Air is P3</td></tr>
+    <tr><td><strong>MagSafe</strong></td><td>Magnetic charging connector. Cable detaches safely if tripped. Neo charges via USB-C only</td></tr>
+    <tr><td><strong>Thunderbolt</strong></td><td>High-speed standard (40 Gb/s). Same shape as USB-C but 4x faster. Neo doesn't have it</td></tr>
+    <tr><td><strong>Force Touch</strong></td><td>Pressure-sensitive trackpad. Detects press depth. Neo uses simpler Multi-Touch</td></tr>
+    <tr><td><strong>True Tone</strong></td><td>Auto color temperature adjustment for ambient lighting. Not on Neo</td></tr>
+    <tr><td><strong>Fanless</strong></td><td>Passive cooling via aluminum body. Silent, but may throttle under heavy load</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Reality Check</h2>
+
+<blockquote>📊 Written one day after announcement (2026-03-05). Benchmarks from iPhone 16 Pro A18 Pro.</blockquote>
+
+<h3>Confirmed ✅</h3>
+<table>
+  <thead><tr><th>Item</th><th>Source</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td>A18 Pro chip</td><td>Apple Official</td><td>✅</td></tr>
+    <tr><td>$599 / ₩990,000</td><td>Apple Official</td><td>✅</td></tr>
+    <tr><td>8GB RAM fixed</td><td>Apple Official</td><td>✅</td></tr>
+    <tr><td>4 colors, fanless, 16hrs, no MagSafe</td><td>Apple Official</td><td>✅</td></tr>
+    <tr><td>256GB no Touch ID</td><td>Apple Official</td><td>✅</td></tr>
+  </tbody>
+</table>
+
+<h3>Pending ⏳</h3>
+<table>
+  <thead><tr><th>Item</th><th>Estimate</th><th>Timeline</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td>Geekbench SC/MC</td><td>~3,400 / ~8,200</td><td>1 week post-launch</td><td>⏳</td></tr>
+    <tr><td>Real battery life</td><td>16 hrs</td><td>2 weeks post-launch</td><td>⏳</td></tr>
+    <tr><td>Thermal throttling</td><td>Unknown</td><td>2 weeks post-launch</td><td>⏳</td></tr>
+    <tr><td>8GB real limits</td><td>~15–20 tabs</td><td>1 month post-launch</td><td>⏳</td></tr>
+  </tbody>
+</table>
+
+<h3>Update Roadmap</h3>
+<ul>
+  <li>📅 March 11: Launch day — actual Geekbench</li>
+  <li>📅 Late March: Battery/thermal reviews</li>
+  <li>📅 June: Product Verdict reassessment</li>
+</ul>
+
+<hr>
+
+<h2>References</h2>
+<ul>
+  <li><a href="https://www.apple.com/newsroom/2026/03/say-hello-to-macbook-neo/">Apple Newsroom — MacBook Neo</a></li>
+  <li><a href="https://browser.geekbench.com/v6/cpu/search?q=iPhone+16+Pro">Geekbench 6 — A18 Pro</a></li>
+  <li><a href="https://www.macrumors.com/2026/03/04/apple-announces-low-cost-macbook-neo-with-a18-pro-chip/">MacRumors — MacBook Neo</a></li>
+  <li><a href="https://9to5mac.com/2026/03/04/macbook-neo-is-now-official/">9to5Mac — MacBook Neo</a></li>
+</ul>
+
+<div class="disclaimer">
+  <p>FX: $1 ≈ ₩1,450 / ¥150 (March 2026) · Not purchase advice. Verify with post-launch reviews.</p>
+</div>
+
+<div class="tags">
+  <a href="#">#MacBookNeo</a>
+  <a href="#">#Apple</a>
+  <a href="#">#A18Pro</a>
+  <a href="#">#SecondLaptop</a>
+  <a href="#">#BudgetMacBook</a>
+  <a href="#">#CafeComputer</a>
+  <a href="#">#AticaaTechView</a>
+</div>
+
+</body>
+</html>
